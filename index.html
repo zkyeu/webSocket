@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>socket demo</title>
+    <link href="style/index.css" rel="stylesheet">
+</head>
+<body>
+<div id="app" v-cloak>
+    <div class="chat-box-left">
+        <h5>微信网页版聊天demo[receive message]</h5>
+        <div class="message-block">
+            <li class="message-left" v-for="x in 5">
+                <p>
+                    <span>用户er</span>
+                    <i>2017-07-11 15:40:30</i>
+                </p>
+                <p>
+                    {{123}}
+                </p>
+            </li>
+        </div>
+
+    </div>
+    <div class="chat-box-right">
+        <h5>微信网页版聊天demo[send message]</h5>
+
+        <!--聊天框-->
+        <div class="message-block">
+
+
+            <li class="message-right" v-for="x in 5">
+                <p>
+                    <span>用户er</span>
+                    <i>2017-07-11 15:42:10</i>
+                </p>
+                <p>
+                    {{234}}
+                </p>
+            </li>
+        </div>
+
+        <!--发送文本框-->
+        <div class="chat-block">
+                <textarea placeholder="请输入内容" class="chat-textarea" v-model="curMsg">
+                </textarea>
+            <div class="send-btn" @click="sendMsg">发送</div>
+        </div>
+    </div>
+</div>
+<script src="js/vue.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.nicescroll.min.js"></script>
+<script src="js/js.js"></script>
+
+
+</body>
+</html>

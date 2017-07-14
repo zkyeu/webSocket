@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>socket demo</title>
+    <link href="style/index.css" rel="stylesheet">
+</head>
+<body>
+<div id="app" v-cloak>
+    <div class="chat-box-left">
+        <h5>微信网页版聊天demo[receive message]</h5>
+
+
+    </div>
+    <div class="chat-box-right">
+        <h5>微信网页版聊天demo[send message]</h5>
+
+        <!--聊天框-->
+        <div class="message-block">
+            <div class="message-block" v-if="wxData.chatMsg">
+                <li :class="{'message-left':true, 'message-right': false}" v-for="x in wxData.chatMsg">
+                    <p>
+                        <span>{{x.from_uid}}</span>
+                        <i>{{x.msg_time}}</i>
+                    </p>
+                    <p>
+                        {{x.msg_content}}
+                    </p>
+                </li>
+            </div>
+        </div>
+
+        <!--发送文本框-->
+        <div class="chat-block">
+            <div>
+                 <textarea placeholder="请输入内容" class="chat-textarea" v-model="curMsg"></textarea>
+            </div>
+            <div class="user-info">
+                <div>
+                    请输入接收人ID：<input type="text" placeholder="请输入接受人" v-model="curUser">
+                </div>
+                <div class="send-btn" @click="sendMsg">发送</div>
+            </div>
+
+
+
+        </div>
+    </div>
+</div>
+<script src="js/vue.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.nicescroll.min.js"></script>
+<!--<script src="js/socketWorker.js"></script>-->
+<script src="js/liveMsger.js"></script>
+<script src="js/live.js"></script>
+<script src="js/js.js"></script>
+
+
+</body>
+</html>
